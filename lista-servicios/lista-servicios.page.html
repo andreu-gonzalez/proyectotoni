@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+     
+    <ion-title>Listado de servicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  <ion-list *ngFor="let servicio of servicios">
+    <ion-item-sliding>
+    <ion-item >
+      <p>problem_description: {{servicio.problem_description}}</p>
+      <p></p>
+      <p>solution_description: {{servicio.solution_description}}</p>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="removeser(servicio.id)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-item-option>
+      <ion-item-option color="success" (click)="UpdateServicios(servicio.id)">Editar</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+  <ion-button color="primary" (click)="addservicio()">
+    Add New
+  </ion-button>
+</ion-content>
